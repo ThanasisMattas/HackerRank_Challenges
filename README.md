@@ -6,7 +6,7 @@ Solutions & analysis of:
 * Project Euler #222 : Sphere Packing
 
 
-For the analysis you can reed the report.pdf at the directory of each problem.
+For the analysis you can read the report.pdf at the directory of each problem.
 
 
 > (C) 2019, Thanasis Mattas 
