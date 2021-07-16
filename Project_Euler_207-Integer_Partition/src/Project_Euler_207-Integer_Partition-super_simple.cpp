@@ -13,31 +13,33 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-
 #include <iostream>
 #include <cmath>
 
 int main() {
-    
-    size_t q, a, b;
-    std::cin >> q;
-    size_t sqroot, k_counter, Perf_counter;
-    
-    while(q--) {
-        std::cin >> a >> b;
-        sqroot = 3; k_counter = 1; Perf_counter = 1;			// P(k=2) = (double)Perf_counter/k_counter = 1/1 = 1
-        while(sqroot+=2){
-            ++k_counter;
-            
-            if(log2(sqroot+1)-(int)log2(sqroot+1) == 0) {		// {if((t-(int)t) == 0)} If t is an int, the partition is perfect.
-                ++Perf_counter;
-            }
-            // std::cout << Perf_counter << " " << k_counter << std::endl;
-            // std::cout << (double)Perf_counter / k_counter << std::endl;
-            if((double)Perf_counter / k_counter < (double)a/b) {
-                std::cout << std::fixed << (sqroot*sqroot-1)/4 << std::endl;
-                break;
-            }
-        }    
-    } 
+  std::ios::sync_with_stdio(0);
+  std::cin.tie(0);
+  size_t q, a, b;
+  std::cin >> q;
+  size_t sqroot, k_counter, Perf_counter;
+
+  while (q--) {
+    std::cin >> a >> b;
+    sqroot = 3; k_counter = 1; Perf_counter = 1;
+    // P(k = 2) = (double)Perf_counter / k_counter = 1 / 1 = 1
+    while(sqroot += 2){
+      ++k_counter;
+
+      // {if((t-(int)t) == 0)} If t is an int, the partition is perfect.
+      if (log2(sqroot + 1) - (int)log2(sqroot + 1) == 0) {
+        ++Perf_counter;
+      }
+      // std::cout << Perf_counter << " " << k_counter << std::endl;
+      // std::cout << (double)Perf_counter / k_counter << std::endl;
+      if ((double)Perf_counter / k_counter < (double)a / b) {
+        std::cout << std::fixed << (sqroot * sqroot - 1) / 4 << std::endl;
+        break;
+      }
+    }
+  }
 }
